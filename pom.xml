@@ -46,7 +46,8 @@
 	<xml-apis.version>1.4.01</xml-apis.version>
 	<!-- json -->
 	<org.codehaus.jackson.version>1.9.12</org.codehaus.jackson.version>
-	
+	<!-- pdfbox -->
+	<pdfbox.version>1.8.9</pdfbox.version>
 	<!-- indexing & searching -->
 	<hibernate.search.version>5.0.0.Final</hibernate.search.version>
 	<hibernate.search.analyzers.version>5.0.0.Final</hibernate.search.analyzers.version>
