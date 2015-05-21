@@ -15,8 +15,8 @@
   	<project.build.finalName>palm</project.build.finalName>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   	<!-- framework -->
-	<spring.version>4.1.3.RELEASE</spring.version>
 	<org.springframework.version>4.1.3.RELEASE</org.springframework.version>
+	<spring.security.version>4.0.1.RELEASE</spring.security.version>
 	<!-- testing -->
 	<junit.version>4.11</junit.version>
 	<hamcrest.version>1.3</hamcrest.version>
