@@ -24,9 +24,10 @@
 	<log4j.version>1.2.17</log4j.version>
 	<!-- framework view -->
 	<freemarker.version>2.3.21</freemarker.version>
+	<!-- servlet -->
+	<javax.servlet.api.version>3.1.0</javax.servlet.api.version>
 	<!-- io - servlet - multipartfile -->
 	<commonsio.version>2.4</commonsio.version>
-	<tomcat.servlet.api.version>6.0.41</tomcat.servlet.api.version>
 	<commons.fileupload.version>1.2</commons.fileupload.version>
 	<!-- hibernate & datasource-->
 	<org.apache.commons.dbcp2.version>2.0</org.apache.commons.dbcp2.version>
@@ -34,7 +35,7 @@
 	<org.hibernate.entitymanager.version>4.3.7.Final</org.hibernate.entitymanager.version>
 	<org.hibernate.jpa21.api.version>1.0.0.Final</org.hibernate.jpa21.api.version>
 	<org.hibernate.validator.version>5.1.3.Final</org.hibernate.validator.version>
-	<javassist.version>3.12.1.GA</javassist.version>
+	<javassist.version>3.19.0-GA</javassist.version>
 	<org.aspectj.version>1.8.2</org.aspectj.version>
 	<mysql.connector.java.version>5.1.30</mysql.connector.java.version>
 	<!-- jena -->
