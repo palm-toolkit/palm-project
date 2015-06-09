@@ -80,6 +80,7 @@
   	<module>../palm-analytics</module>
   	<module>../palm-core</module>
   	<module>../palm-web</module>
+  	<module>../palm-ontology</module>
   </modules>
   
   <!-- global dependencies -->
