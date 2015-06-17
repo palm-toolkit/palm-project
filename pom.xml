@@ -54,6 +54,10 @@
 	<lucene-version>4.10.2</lucene-version>
 	<!-- metadata analysis -->
 	<org.reflections.version>0.9.9-RC1</org.reflections.version>
+	<!-- jsoup - scrape and parse HTML from a URL -->
+	<jsoup.version>1.8.2</jsoup.version>
+	<!-- thread/object pool -->
+	<org.apache.commons.pool2.version>2.4.1</org.apache.commons.pool2.version>
 	<!-- statistic -->
 	
 	<!-- matrices operator -->
