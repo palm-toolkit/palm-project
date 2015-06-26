@@ -58,6 +58,8 @@
 	<jsoup.version>1.8.2</jsoup.version>
 	<!-- thread/object pool -->
 	<org.apache.commons.pool2.version>2.4.1</org.apache.commons.pool2.version>
+	<!-- common libraries for Java -->
+	<com.google.guava.version>18.0</com.google.guava.version>
 	<!-- statistic -->
 	
 	<!-- matrices operator -->
