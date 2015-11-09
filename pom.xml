@@ -104,6 +104,7 @@
 	</dependency>
   	<!--  logging  -->
 	<!-- logging -->
+	<!-- 
 	<dependency>
 		<groupId>org.slf4j</groupId>
 		<artifactId>slf4j-api</artifactId>
@@ -115,6 +116,7 @@
       <artifactId>jcl-over-slf4j</artifactId>
       <version>1.7.0</version>
    </dependency>
+   -->
 	
 	<dependency> 
 	  <groupId>ch.qos.logback</groupId>
