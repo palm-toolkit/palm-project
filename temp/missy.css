@@ -1,0 +1,722 @@
+/*ALLGEMEIN - HEADER*/
+/*Verkleinerung des Headers, um mehr Content und die komplette Subnavigation in den sofort sichtbaren Seitenbereich zu bekommen*/
+.gs_ms_header {
+    height: 6rem;
+}
+
+/*Aufhebung des bottoms 2rem*/
+.gs_ms_header div {
+    bottom: 0;
+}
+
+/*Platzierung des MISSY-Logos*/
+.gs_ms_header img {
+    margin-top: 40px;
+}
+
+/*Margin-right zur Platzirung des FDZ-Logos*/
+.gs_ms_header div h1 {
+    margin-right: 165px;
+}
+
+/*ALLGEMEIN - SEITENRÄNDER*/
+/*Seitenränder werden bei zweispaltigem Layout an der innen liegenden Seite halbiert um Weißraum zu reduzieren*/
+/*erste Ebene*/
+.ym-g25 .gs_accordion-nest,.ym-g25 .X_ohneAccordion {
+    padding: 0 1rem 0 2rem;
+}
+
+/*zweite Ebene*/
+.ym-g25 .gs_accordion-nest .gs_accordion-nest {
+    padding: 0;
+}
+
+.ym-g75 .gs_accordion-nest {
+    padding: 0 2rem 0 1rem;
+}
+
+.ce-default {
+    padding: 0 2rem 0 1rem;
+    margin: 2rem 0 1rem;
+}
+
+/*ALLGEMEIN - SCHRIFTGRÖSSE*/
+p,td,th,ul li {
+    font-size: .8rem;
+}
+
+/*ALLGEMEIN - ANGEPASSTE ABSTÄNDE*/
+p,td,th {
+    padding: .4rem 1rem;
+}
+
+/*Sonderregel für Absätze (z.B. innerhalb von Tabellen), die das Padding bereits über die Tabellenzelle / Container bekommen haben*/
+td p,th p,p.X_noPadding {
+    padding: .4rem 0;
+}
+
+/*ALLGEMEIN - ABSTAND NACH ÜBERSCHRIFTEN*/
+h1,h2,h3,h3,h5,h6 {
+    padding-bottom: 0;
+}
+
+/*ALLGEMEIN: HAUPTNAVIGATION UND SUCHSCHLITZ*/
+/*Suchschlitz wird verkleinert, um mehr Platz für die Hauptnavigation zu schaffen*/
+.gs_search input[type="text"] {
+    width: 60%;
+}
+
+/*SUBNAVIGATION*/
+/*
+Font-size für die komplette Subnav. Entspricht dem Wert aus dem Megamenü der Hauptseite und dem hier vorgeschlagnen Wert für den Content
+Padding oben und unten auf 0.3 geändert
+*/
+.X_Subnav div h3,.X_Subnav div h5,.X_Subnav a {
+    font-size: .8rem !important;
+    padding: .3rem .8rem;
+    cursor: pointer;
+}
+
+/*Schmale Variante für die Kategorien der Suchfilter*/
+.X_Subnav div h5.X_searchHeader {
+    padding: 0 .8rem;
+}
+
+/*Formatierung der Subnav-Boxen entsprechend der Boxen im Content-Bereich*/
+.X_Subnav div h3 {
+    background: #58748f;
+    color: #fff;
+}
+
+/*Formatierung der Subnav-Boxen entsprechend der Boxen im Content-Bereich --> aktives Element*/
+.X_Subnav div h3.X_active {
+    color: #ff6100;
+}
+
+/*margin-bottom wird für die Subnav überschrieben und verkleinert*/
+.X_Subnav div.gs_accordion-nest,.X_Subnav div.X_ohneAccordion {
+    margin-bottom: .2rem;
+}
+
+.X_Subnav div div.gs_accordion-nest,.X_Subnav div div.X_ohneAccordion {
+    margin-bottom: .1rem;
+}
+
+/*padding-top wird für die Subnav überschrieben und verkleinert*/
+.X_Subnav div div.gs_accordion-content {
+    padding-top: 0;
+}
+
+/*Hack, um divs per default auszuklappen und js zu überschreiben*/
+.X_show {
+    display: block !important;
+}
+
+/*Klasse zur Darstellung der Series-Kategorien ("National Data" und "EU Data")*/
+div.ym-g25 div.X_Subnav_seriesTypes {
+    margin: .5rem 2rem 0;
+}
+
+div.ym-g25 div.X_Subnav_seriesTypes h4,div.ym-g25 div.X_Subnav_seriesTypes h5 {
+    color: #58748f;
+    cursor: default;
+    font-weight: 400;
+}
+
+/*Klasse zur Darstellung der Überschrift in der Marginalspalte Suche*/
+div.ym-g25 div.X_Subnav_seriesTypes h4.X_searchHeader,div.ym-g25 div.X_Subnav_seriesTypes h5.X_searchHeader {
+    font-weight: 700;
+}
+
+/*Klasse zur Formatierung der zweiten Ebene. Entspricht im Wesentlichen der ersten Ebene im Megamenu*/
+div.ym-g25 div.X_Subnav_second {
+    margin-bottom: .1rem;
+}
+
+div.ym-g25 div.X_Subnav_second h5 {
+    font-weight: 400;
+    background: #ededed;
+    color: #58748f;
+}
+
+div.ym-g25 div.X_Subnav_second h5:hover {
+    background: #58748f;
+    color: #fff;
+}
+
+/*Klasse zur Formatierung der dritten Ebene.*/
+div.ym-g25 div.X_Subnav_third h5 {
+    background: #e6eaee;
+    color: #58748f;
+    font-weight: 400;
+}
+
+/*Klasse zur Formatierung der dritten Ebene.*/
+div.ym-g25 div.X_Subnav_fourth h5 {
+    background: #fff;
+    color: #58748f;
+}
+
+/*Für die Liste der Jahreszahlen wird die Klasse gs_alpha_nav übernommen (siehe Zeile 1121 in der css.php) und an die Peripherie angepasst*/
+.X_Subnav .gs_alpha_nav {
+    font-weight: 400;
+    margin-bottom: 0;
+    border-bottom: .1rem solid #fff;
+}
+
+.X_Subnav .gs_alpha_nav	li a {
+    padding: .2rem .55rem;
+}
+
+/*Klassen, um Listen mit 1,2 und 3 Elementen pro Zeiile zu definieren*/
+ul.X_Subnav_OnePer li a {
+    text-align: center;
+    width: 174px;
+}
+
+ul.X_Subnav_TwoPer li a {
+    text-align: center;
+    width: 75px;
+}
+
+ul.X_Subnav_OnePer li.X_active,ul.X_Subnav_TwoPer li.X_active,ul.X_Subnav_ThreePer li.X_active,h5.X_active {
+    background: #ff6100 !important;
+}
+
+ul.X_Subnav_OnePer li.X_active a[href],ul.X_Subnav_TwoPer li.X_active a[href],ul.X_Subnav_ThreePer li.X_active a[href],h5.X_active {
+    color: #fff !important;
+}
+
+/*Schriftvariante für die Hinweise zur Navigation*/
+p.X_NavHint {
+    color: #ff6100;
+}
+
+/*BUTTONLEISTE, siehe z.B. Länderauswahl auf Studienebene*/
+.ym-g75 ul.gs_alpha_nav {
+    width: auto;
+    margin: .5rem 0 0;
+}
+
+.ym-g75 ul.gs_alpha_nav li {
+    width: 2.9rem;
+}
+
+.ym-g75 ul.gs_alpha_nav li a {
+    padding: .2rem .9rem;
+    width: 1.1rem;
+}
+
+.ym-g75 ul.gs_alpha_nav li.gs_active a {
+    color: #fff;
+    background: #FF6100;
+    font-weight: 700;
+}
+
+.ym-g75 ul.gs_alpha_nav li.X_liLinkWide {
+    width: 3.5rem;
+}
+
+.ym-g75 ul.gs_alpha_nav li.X_liLinkWide a {
+    width: 2.7rem;
+}
+
+/*CONTENTTABELLEN*/
+.ym-g75 table {
+    width: 100%;
+}
+
+.ym-g75 table tr:hover {
+    background: none;
+}
+
+/*Für zweispaltige Tabellen mit Kategorie in der erstan Spalte (meist in der Studienbeschreibung)*/
+.ym-g75 table.X_tableTwoCols tr td:first-child {
+    width: 25%;
+    font-weight: 700;
+}
+
+/*Tabelle mit kleineren Zeilenhöhen*/
+.ym-g75 table.X_tableNarrow tr td,table.X_tableNarrow tr th {
+    padding: .1rem 1rem;
+    min-width: 50px;
+}
+
+/*KLAPPLISTEN*/
+/*Klasse zur Formatierung der zweiten Ebene von Klappelmenten*/
+.X_SecondLayer {
+    margin: 0 0 .2rem !important;
+    padding: 0 !important;
+}
+
+.X_SecondLayer h5 {
+    padding: .3rem .8rem;
+    cursor: pointer;
+    background: #e6e6e6;
+}
+
+/*Überschreiben des Innenabstands des eingebetteten divs*/
+.X_SecondLayer div {
+    padding: .5rem 0;
+}
+
+/*REITERNAVIGATION*/
+div.X_tabContainer {
+    padding: .8rem !important;
+}
+
+ul.tabs {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+ul.tabs li {
+    list-style: none;
+    display: inline;
+    margin: 0 2px 0 0;
+    padding: 5px 0;
+    background: #e6eaee;
+}
+
+ul.tabs li a {
+    border: 2px solid #e6e6e6;
+    padding: 0 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+ul.tabs li a:hover {
+    border-bottom: none;
+}
+
+ul.tabs li a.active {
+    background: #fff;
+    color: #FF6100;
+    border-bottom: none;
+    padding: 6px;
+    font-weight: 700;
+}
+
+div.tabContent {
+    border: 2px solid #e6e6e6;
+    padding: 0;
+    margin-top: 2px;
+    margin-bottom: 15px;
+    display: none;
+    background: #fff;
+    min-height: 60px;
+}
+
+div.tabContent table {
+    width: 100%;
+}
+
+div.tabContent.currentTab {
+    display: block;
+}
+
+/*VARIABLENDETAILS: AVAILABILITY*/
+/*Wrapper*/
+.X_availabilityWrapper {
+    overflow: auto;
+}
+
+/*Tabelle für die Verfügbarkeit über die Zeit*/
+.X_availabilityWrapper table {
+}
+
+/*MATRIX*/
+/*Filter*/
+/*Verkleinerung des allgemeinen margin-bottom für die beiden verwendeten Listentypen*/
+ul.X_horizontalList,ul.X_conceptList {
+    margin-bottom: 0;
+}
+
+/*Breite für Liste mit Auswahl der thematischen Bereiche*/
+div .X_optionsBox .X_conceptList ul {
+    width: 100%;
+}
+
+/*Formatierung für horizontale Liste (Filteroptionen)*/
+ul.X_horizontalList li {
+    float: left;
+    line-height: 14pt;
+    list-style: outside none none;
+    margin-bottom: 0;
+    margin-left: 0;
+    min-width: 40px;
+    width: auto;
+}
+
+/*Klasse um allgemeines padding für Header des Filterbalkens aufzuheben*/
+div.X_FilterHeader {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/*Formatierung für Icons in der Filterleiste*/
+img.X_icon {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    float: left;
+    margin: -6px 10px 0 0;
+}
+
+img.X_iconFloatRight {
+    float: right;
+}
+
+/*Formatierung für div mit Filteroptionen*/
+div.X_BorderOptions {
+    border: .2rem solid #58748f;
+    padding: 15px;
+}
+
+/*Formatierungen für Filterliste mit Konzepten*/
+div .X_optionsBox {
+    max-height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5px 0;
+    border: 1px solid #e6e6e6;
+}
+
+div .X_optionsBox .X_conceptList li {
+    width: 95%;
+    vertical-align: middle;
+    margin-left: 0;
+    list-style-type: none;
+    font-weight: 700;
+}
+
+div .X_optionsBox .X_conceptList li li {
+    margin-left: 15px;
+    font-weight: 400;
+}
+
+.X_conceptList input[type="checkbox"],.X_conceptList input[type="radio"] {
+    margin: 0;
+}
+
+.X_conceptList div {
+    width: 100%;
+    display: block;
+}
+
+input[type="checkbox"],input[type="radio"] {
+    width: 20px;
+    vertical-align: middle;
+}
+
+div.X_OptionsFilter .X_OptionsRight,div.X_OptionsFilter .X_OptionsLeft {
+    padding: 0;
+    text-align: left;
+}
+
+.X_OptionsLeft {
+    float: left;
+    width: calc(50% - 20px);
+    text-align: left;
+    padding: 0 0 0 20px;
+}
+
+.X_OptionsLeft * {
+    float: left;
+}
+
+.X_OptionsLeft h3 {
+    margin-bottom: 0;
+    padding: 7px 0;
+    color: #fff;
+}
+
+.X_OptionsRight {
+    float: right;
+    padding: 0 20px 0 0;
+    text-align: left;
+    width: calc(50% - 20px);
+}
+
+/*Icons*/
+img.expandable {
+    cursor: pointer;
+    height: 17px;
+    margin: 0 0 -3px;
+    width: 17px;
+    float: left;
+}
+
+/*Formatierungsregeln für die Icons zum Ein- und Ausklappen*/
+div.X_matrixHeader h3 img {
+    margin: 2px 3px 0 0;
+}
+
+div.X_matrixHeader h4 img {
+    margin: 3px 3px 0 5px;
+}
+
+div.X_matrixHeader h5 img {
+    margin: 2px 3px 0 10px;
+}
+
+div.X_matrixHeader h6 img {
+    margin: 6px;
+}
+
+/*Matrix*/
+/*Klassen für die Matrixdarstellung*/
+div.X_matrixFrame {
+    margin-left: 250px;
+    min-height: 300px;
+    width: 408px;
+    overflow-x: auto;
+    padding-top: .5rem;
+}
+
+div.X_matrixFrame2 {
+    margin-left: 150px;
+    min-height: 300px;
+    width: 520px;
+    overflow-x: auto;
+    padding-top: .5rem;
+}
+
+div.X_matrixLine:nth-child(even) {
+    background: #e6e6e6;
+}
+
+div.X_matrixUnit,div.X_matrixUnitYear,div.X_matrixYearHint {
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+    border-right: 1px solid #e6e6e6;
+    padding: 3px 0;
+    margin-right: -4px;
+}
+
+div.X_matrixUnitWide,div.X_matrixUnitWideYear,div.X_matrixYearHintWide {
+    width: 220px;
+    display: inline-block;
+    text-align: center;
+    border-right: 1px solid #999;
+    padding: 1px 0;
+    margin-right: -4px;
+}
+
+/*Wiederholte Jahreszahlen in den h1-Überschriften*/
+div.X_matrixYearHint {
+    font-weight: 700;
+}
+
+div.X_matrixLine:nth-child(even) div.X_matrixYearHint {
+    color: #fff;
+}
+
+div.X_matrixLine:nth-child(odd) div.X_matrixYearHint {
+    color: #e6e6e6;
+}
+
+/*Blau hinterlegte Felder für vergleichbare Konzepte*/
+div.X_matrixUnitComparable {
+    background: #58748f;
+}
+
+div.X_matrixUnitComparable a {
+    color: #fff;
+}
+
+div.X_matrixUnitYear,div.X_matrixUnitWideYear {
+    font-weight: 700;
+}
+
+div.X_matrixHeader {
+    max-width: 250px;
+    width: 250px;
+    display: inline-block;
+    margin-left: -250px;
+    position: absolute;
+    overflow: visible;
+    padding: 3px 0;
+    border-right: 1px solid #e6e6e6;
+}
+
+div.X_matrixHeader2 {
+    max-width: 150px;
+    width: 150px;
+    display: inline-block;
+    margin-left: -150px;
+    position: absolute;
+    overflow: visible;
+    padding: 1px 10px;
+    border-right: 1px solid #e6e6e6;
+}
+
+div.X_matrixLine:nth-child(even) div.X_matrixHeader,div.X_matrixLine:nth-child(even) div.X_matrixHeader2 {
+    background: #e6e6e6;
+}
+
+div.X_doubleScroll-scroll-wrapper {
+    width: 408px;
+    margin-left: 250px;
+}
+
+div.X_doubleScroll-scroll-wrapper2 {
+    width: 520px;
+    margin-left: 150px;
+}
+
+.noDisplay {
+    display: none;
+}
+
+/*Überschriften*/
+div.X_matrixHeader h3,div.X_matrixHeader h4,div.X_matrixHeader h5,div.X_matrixHeader h6,div.X_matrixHeader2 h3,div.X_matrixHeader2 h4,div.X_matrixHeader2 h5,div.X_matrixHeader2 h6 {
+    padding: 0;
+}
+
+div.X_matrixHeader h3,div.X_matrixHeader2 h3 {
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+div.X_matrixHeader h4,div.X_matrixHeader2 h4 {
+    font-size: .9rem;
+    white-space: nowrap;
+}
+
+div.X_matrixHeader h5,div.X_matrixHeader2 h5 {
+    font-size: .8rem;
+    white-space: nowrap;
+}
+
+div.X_matrixHeader h6,div.X_matrixHeader2 h6 {
+    font-size: .8rem;
+    font-weight: 400;
+    margin-left: 35px;
+}
+
+/*Schriftgröße für Matrix*/
+div.X_matrixUnit a,div.X_matrixUnitYear,div.X_matrixUnitWide a,div.X_matrixUnitWideYear {
+    font-size: .8rem;
+}
+
+/*Doppelte Scrollleiste für Matrix*/
+div.X_doubleScrollWrapper {
+    height: 20px;
+}
+
+div.X_doubleScroll {
+    width: 1000px;
+}
+
+div.X_doubleScrollWrapper,.X_matrixFrame2 {
+    margin-left: 150px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+/*Tabellen*/
+/*Alternierende Zeilenhintergründe*/
+table.X_tableZebra tr td,table.X_tableZebra tr th {
+    color: #000;
+}
+
+table.X_tableZebra tr:nth-child(even) td,table.X_tableZebra tr:nth-child(even) th {
+    background: #e6e6e6;
+}
+
+table.X_tableZebra tr:nth-child(odd) td,table.X_tableZebra tr:nth-child(odd) th {
+    background: #fff;
+}
+
+/*Textzentrierte Ausgabe*/
+td.X_center,th.X_center {
+    text-align: center;
+}
+
+td.X_right,th.X_right {
+    text-align: right;
+}
+
+/*Sortierfunktion im Header*/
+td.X_tableSortHeader,th.X_tableSortHeader {
+    background: url(http://www.gesis.org/fileadmin/missy/MISSY3/images/icons/gs_icon.sort.png) #fff no-repeat scroll left center !important;
+    cursor: pointer;
+    padding-left: 25px !important;
+}
+
+/*Suche*/
+/*wrapper-div für Jahresliste*/
+.X_searchCatBox {
+    background: #ededed;
+    padding: .4rem 0 .4rem .8rem !important;
+}
+
+/*Formatierung der inputs für die Jahreszahlen*/
+.X_searchCatBox input[type="text"] {
+    background: #fff none repeat scroll 0 0;
+    border: 1pt solid #58748f;
+    font-size: .8rem;
+    padding: 0 .4rem;
+    text-align: center;
+    width: 40px;
+}
+
+/*Formatierung des Icons für die Aktualisierung der Jahreszahlen*/
+.X_searchCatBox div.X_inputWrapper {
+    background: url(refresh_blue.png) right no-repeat;
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding-right: .8rem;
+}
+
+/*Ausgabe mehrerer Elemente in einer Zeile, z.B. für Länder*/
+.X_searchCatBox h5.X_searchHeader {
+    padding: 0 .4rem 0 0 !important;
+    width: 35px;
+    display: inline-block;
+}
+
+/*Formatierung der Tabelle für die Suchtrefferlisten*/
+.X_tableSearch {
+    margin-top: 1rem;
+}
+
+/*Highlight-Markierung auch für Trefferlistentabellen*/
+.X_tableSearch .X_active {
+    color: #ff6100;
+}
+
+/*Spezifikation für Zellen in den Trefferlistentabellen*/
+table.X_tableSearchLDSBox td,table.X_tableSearchLDSBox th,table.X_tableSearchResults td,table.X_tableSearchResults th {
+}
+
+/*Aufheben des Zebra-Effekts für die eingebetteten Tabellen*/
+table.X_tableZebra tr:nth-child(even) table.X_tableSearchLDSBox td,table.X_tableZebra tr:nth-child(even) table.X_tableSearchLDSBox th,table.X_tableZebra tr:nth-child(even) table.X_tableSearchResults td,table.X_tableZebra tr:nth-child(even) table.X_tableSearchResults th {
+    background: #e6e6e6;
+    border-bottom: none;
+}
+
+table.X_tableZebra tr:nth-child(odd) table.X_tableSearchLDSBox td,table.X_tableZebra tr:nth-child(odd) table.X_tableSearchLDSBox th,table.X_tableZebra tr:nth-child(odd) table.X_tableSearchResults td,table.X_tableZebra tr:nth-child(odd) table.X_tableSearchResults th {
+    background: #fff;
+    border-bottom: none;
+}
+
+/*Spezifikation für die Box mit dem Logical Dataset*/
+table.X_tableSearchLDSBox {
+    border: 1pt solid #58748f;
+    margin: 1rem 0;
+}
+
+/*Spezifikation für die Box mit den Ländern*/
+table.X_tableSearchCountryBox tr td,table.X_tableSearchCountryBox tr th {
+    padding: 0 !important;
+}
+
+/*Listen für Keywords*/
+ul.X_KeywordList li,ul.X_KeywordList li ul {
+    margin: .2rem;
+}
