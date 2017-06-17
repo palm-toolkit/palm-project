@@ -1,0 +1,557 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>de.rwth.i9</groupId>
+    <artifactId>palm-project</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+<!--     <relativePath>../palm-project/pom.xml</relativePath> -->
+  </parent>
+  
+  <groupId>de.rwth.i9.palm</groupId>
+  <artifactId>palm-core</artifactId>
+  
+  <name>palm-core</name>
+  <description>The core module of PALM project</description>
+  
+  <dependencies>
+  	<!--  internal dependency -->
+  	<dependency>
+		<groupId>de.rwth.i9.palm</groupId>
+		<artifactId>palm-analytics</artifactId>
+		<version>${project.version}</version>
+		<exclusions>
+		  <exclusion> 
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		  </exclusion>
+		</exclusions> 
+	</dependency>
+  	<dependency>
+		<groupId>de.rwth.i9.palm</groupId>
+		<artifactId>palm-model</artifactId>
+		<version>${project.version}</version>
+	</dependency>
+  	<dependency>
+		<groupId>de.rwth.i9.palm</groupId>
+		<artifactId>palm-persistence-relational</artifactId>
+		<version>${project.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>de.rwth.i9.palm</groupId>
+				<artifactId>palm-model</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	
+	<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
+	<!--
+	    Core utilities used by other modules.
+	    Define this if you use Spring Utility APIs (org.springframework.core.*/org.springframework.util.*)
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-core</artifactId>
+	  <version>${org.springframework.version}</version>
+	 <!-- 
+	  <exclusions>
+		<exclusion>
+			<artifactId>commons-logging</artifactId>
+			<groupId>commons-logging</groupId>
+		</exclusion>
+	  </exclusions>
+	  -->
+	</dependency>
+	
+	<!--
+	    Expression Language (depends on spring-core)
+	    Define this if you use Spring Expression APIs (org.springframework.expression.*)
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-expression</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!-- 
+	    Bean Factory and JavaBeans utilities (depends on spring-core)
+	    Define this if you use Spring Bean APIs (org.springframework.beans.*) 
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-beans</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!--
+	    Aspect Oriented Programming (AOP) Framework (depends on spring-core, spring-beans)
+	    Define this if you use Spring AOP APIs (org.springframework.aop.*)
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-aop</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!--
+	    Application Context (depends on spring-core, spring-expression, spring-aop, spring-beans) 
+	    This is the central artifact for Spring's Dependency Injection Container and is generally always defined
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-context</artifactId>
+	  <version>${org.springframework.version}</version>
+	  <exclusions>
+		<exclusion>
+			<artifactId>commons-logging</artifactId>
+			<groupId>commons-logging</groupId>
+		</exclusion>
+	  </exclusions>
+	</dependency>
+	
+	<!--
+	    Various Application Context utilities, including EhCache, JavaMail, Quartz, and Freemarker integration
+	    Define this if you need any of these integrations
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-context-support</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!--
+	    Transaction Management Abstraction (depends on spring-core, spring-beans, spring-aop, spring-context)
+	    Define this if you use Spring Transactions or DAO Exception Hierarchy
+	    (org.springframework.transaction.*/org.springframework.dao.*)
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-tx</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!--
+	    JDBC Data Access Library (depends on spring-core, spring-beans, spring-context, spring-tx)
+	    Define this if you use Spring's JdbcTemplate API (org.springframework.jdbc.*)
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-jdbc</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!--
+	    Object-to-Relation-Mapping (ORM) integration with Hibernate, JPA, and iBatis.
+	    (depends on spring-core, spring-beans, spring-context, spring-tx)
+	    Define this if you need ORM (org.springframework.orm.*)
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-orm</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!--
+	    Object-to-XML Mapping (OXM) abstraction and integration with JAXB, JiBX, Castor, XStream, and XML Beans.
+	    (depends on spring-core, spring-beans, spring-context)
+	    Define this if you need OXM (org.springframework.oxm.*)
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-oxm</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!--
+	    Web application development utilities applicable to both Servlet and Portlet Environments
+	    (depends on spring-core, spring-beans, spring-context)
+	    Define this if you use Spring MVC, or wish to use Struts, JSF, or another web framework with Spring (org.springframework.web.*)
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-web</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!--
+	    Spring MVC for Servlet Environments (depends on spring-core, spring-beans, spring-context, spring-web)
+	    Define this if you use Spring MVC with a Servlet Container such as Apache Tomcat (org.springframework.web.servlet.*)
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-webmvc</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!--
+	    Spring MVC for Portlet Environments (depends on spring-core, spring-beans, spring-context, spring-web)
+	    Define this if you use Spring MVC with a Portlet Container (org.springframework.web.portlet.*)
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-webmvc-portlet</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<!--
+	    Support for testing Spring applications with tools such as JUnit and TestNG
+	    This artifact is generally always defined with a 'test' scope for the integration testing framework and unit testing stubs
+	-->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-test</artifactId>
+	  <version>${org.springframework.version}</version>
+<!-- 	  <scope>test</scope> -->
+	</dependency>
+	
+	<!-- Required for spring controller junit tests, due to use of jspTagLib for security -->
+    <!-- 
+	<dependency>
+        <groupId>javax.el</groupId>
+        <artifactId>el-api</artifactId>
+        <version>2.2</version>
+        <scope>test</scope>
+    </dependency>
+	-->
+	<!-- Required for spring controller junit tests, due to use of jspTagLib for security -->
+    <!-- 
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jsp-api</artifactId>
+        <version>2.0</version>
+        <scope>test</scope>
+    </dependency>	
+	-->
+	
+	<!-- spring security -->
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-core</artifactId>
+		<version>${spring.security.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-web</artifactId>
+		<version>${spring.security.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-config</artifactId>
+		<version>${spring.security.version}</version>
+	</dependency>
+	<!-- Use in spring security to use jsp import security into freemarker template -->
+	<!-- manually imported to palm/web WEB-INF/lib, therefore commented -->
+	<!-- 
+	<dependency>
+	    <groupId>org.springframework.security</groupId>
+	    <artifactId>spring-security-taglibs</artifactId>
+	    <version>${spring.security.version}</version>
+	</dependency>
+	-->
+	
+	<!-- Apache Database Connection Pool -->
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-dbcp2</artifactId>
+		<version>${org.apache.commons.dbcp2.version}</version>
+		<exclusions>
+		<exclusion>
+			<artifactId>commons-logging</artifactId>
+			<groupId>commons-logging</groupId>
+		</exclusion>
+	  </exclusions>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjweaver</artifactId>
+		<version>${org.aspectj.version}</version>
+	</dependency>
+	
+	<dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjtools</artifactId>
+        <version>${org.aspectj.version}</version>
+    </dependency>
+
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql.connector.java.version}</version>
+	</dependency>
+	
+	<!-- hibernate search  -->
+	 
+	<dependency>
+	   <groupId>org.hibernate</groupId>
+	   <artifactId>hibernate-search-orm</artifactId>
+	   <version>${hibernate.search.version}</version>   
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.lucene</groupId>
+		<artifactId>lucene-analyzers-common</artifactId>
+		<version>${lucene-version}</version>
+	</dependency>
+	
+	<dependency>
+        <artifactId>lucene-queryparser</artifactId>
+        <groupId>org.apache.lucene</groupId>
+        <type>jar</type>
+        <version>${lucene-version}</version>
+     </dependency>
+
+	<!-- jena 
+		Uncomment JENA if you want to in clude JENA
+		in this project (for lined data or semantic)
+		Remember to add exclusion for slf4j in JENA,
+		since PALM already uses logback for logging
+	-->
+	<!-- 
+	<dependency>
+      <groupId>org.apache.jena</groupId>
+      <artifactId>jena-core</artifactId>
+      <version>${org.apache.jena.core-arq.version}</version>
+      <exclusions>
+      	<exclusion> 
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-log4j12</artifactId>
+      	</exclusion>
+      	<exclusion> 
+        	<groupId>log4j</groupId>
+        	<artifactId>log4j</artifactId>
+     	</exclusion>
+      </exclusions> 
+    </dependency>
+    
+    <dependency>
+      <groupId>org.apache.jena</groupId>
+      <artifactId>jena-arq</artifactId>
+      <version>${org.apache.jena.core-arq.version}</version>
+      <exclusions>
+      	<exclusion> 
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-log4j12</artifactId>
+      	</exclusion>
+      	<exclusion> 
+        	<groupId>log4j</groupId>
+        	<artifactId>log4j</artifactId>
+     	</exclusion>
+      </exclusions> 
+    </dependency>
+	
+    <dependency>
+      <groupId>org.apache.jena</groupId>
+      <artifactId>jena-tdb</artifactId>
+      <version>${org.apache.jena.tdb-iri-text.version}</version>
+      <exclusions>
+      	<exclusion> 
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-log4j12</artifactId>
+      	</exclusion>
+      	<exclusion> 
+        	<groupId>log4j</groupId>
+        	<artifactId>log4j</artifactId>
+     	</exclusion>
+      </exclusions> 
+    </dependency>
+	
+    <dependency>
+      <groupId>org.apache.jena</groupId>
+      <artifactId>jena-iri</artifactId>
+      <version>${org.apache.jena.tdb-iri-text.version}</version>
+      <exclusions>
+      	<exclusion> 
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-log4j12</artifactId>
+      	</exclusion>
+      	<exclusion> 
+        	<groupId>log4j</groupId>
+        	<artifactId>log4j</artifactId>
+     	</exclusion>
+      </exclusions> 
+    </dependency>
+	
+    <dependency>
+      <groupId>org.apache.jena</groupId>
+      <artifactId>jena-text</artifactId>
+      <version>${org.apache.jena.tdb-iri-text.version}</version>
+      <exclusions>
+      	<exclusion> 
+        	<groupId>org.slf4j</groupId>
+        	<artifactId>slf4j-log4j12</artifactId>
+      	</exclusion>
+      	<exclusion> 
+        	<groupId>log4j</groupId>
+        	<artifactId>log4j</artifactId>
+     	</exclusion>
+      </exclusions>       
+    </dependency>
+    -->
+    <!-- metadata analysis -->
+    <dependency>
+         <groupId>org.reflections</groupId>
+         <artifactId>reflections</artifactId>
+         <version>${org.reflections.version}</version>
+     </dependency>
+	  
+	<!-- servlet api -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId>
+		<version>${javax.servlet.api.version}</version>
+		<scope>provided</scope>
+	</dependency>
+		
+	<!-- freemarker -->
+	<dependency>
+		<groupId>org.freemarker</groupId>
+		<artifactId>freemarker</artifactId>
+		<version>${freemarker.version}</version>		
+	</dependency>
+	
+	<!--  Library for json -->
+	
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>${com.fasterxml.jackson.core.version}</version>
+	</dependency>
+
+	
+	<!--  File IO and File upload -->
+	<dependency>
+		<groupId>commons-fileupload</groupId>
+		<artifactId>commons-fileupload</artifactId>
+		<version>${commons.fileupload.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>${commonsio.version}</version>
+	</dependency>
+	
+	
+	<dependency>
+		<groupId>xml-apis</groupId>
+		<artifactId>xml-apis</artifactId>
+		<version>${xml-apis.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.tika</groupId>
+		<artifactId>tika-core</artifactId>
+		<version>${apache.tika.version}</version>
+		<exclusions>
+			<exclusion>
+				<artifactId>commons-logging</artifactId>
+				<groupId>commons-logging</groupId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+
+	<dependency>
+		<groupId>org.apache.tika</groupId>
+		<artifactId>tika-parsers</artifactId>
+		<version>${apache.tika.version}</version>
+		<exclusions>
+			<exclusion>
+				<artifactId>commons-logging</artifactId>
+				<groupId>commons-logging</groupId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+
+	<!-- HTML parser -->
+	<dependency>
+	  	<groupId>org.jsoup</groupId>
+	  	<artifactId>jsoup</artifactId>
+	  	<version>${jsoup.version}</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>com.google.guava</groupId>
+	    <artifactId>guava</artifactId>
+	    <version>${com.google.guava.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.itextpdf</groupId>
+		<artifactId>itextpdf</artifactId>
+		<version>5.0.6</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.4</version>
+	</dependency>
+	
+	<!-- OAuth2 for Mendeley -->
+	<dependency>
+		<groupId>org.apache.oltu.oauth2</groupId>
+		<artifactId>org.apache.oltu.oauth2.client</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+	
+	<dependency>
+        <groupId>com.google.api-client</groupId>
+        <artifactId>google-api-client</artifactId>
+        <version>1.20.0</version>
+        <exclusions>
+			<exclusion>
+				<artifactId>commons-logging</artifactId>
+				<groupId>commons-logging</groupId>
+			</exclusion>
+		</exclusions>
+    </dependency>
+	
+	<!-- Cache -->
+	<dependency>
+		<groupId>net.sf.ehcache</groupId>
+		<artifactId>ehcache</artifactId>
+		<version>2.10.0</version>
+	</dependency>
+	
+	<!--
+	<dependency>
+		<groupId>opensymphony</groupId>
+		<artifactId>sitemesh</artifactId>
+		<version>2.4.2</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>us.monoid.web</groupId>
+	    <artifactId>resty</artifactId>
+	    <version>0.3.2</version>
+	</dependency>
+	-->
+	
+		<!-- Gephi Toolkit -->
+		<dependency>
+			<groupId>org.gephi</groupId>
+			<artifactId>gephi-toolkit</artifactId>
+			<version>0.9.1</version>
+		</dependency>
+	
+  </dependencies>
+
+  	<build>
+		<resources>
+		  <resource>
+		    <directory>src/main/resources</directory>
+		    <filtering>true</filtering>
+		    <includes>
+				<include>**/*.xml</include>
+				<include>**/*.properties</include>
+				<include>**/*.sparql</include>
+			</includes>
+		  </resource>
+	</resources>
+	</build>
+</project>
