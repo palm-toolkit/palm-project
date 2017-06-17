@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>de.rwth.i9</groupId>
+    <artifactId>palm-project</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+<!--     <relativePath>../palm-project/pom.xml</relativePath> -->
+  </parent>
+  
+  <groupId>de.rwth.i9.palm</groupId>
+  <artifactId>palm-web</artifactId>
+  <packaging>war</packaging>
+  
+  <name>palm</name>
+  <description>The web and visualization module of PALM project</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>de.rwth.i9.palm</groupId>
+	    	<artifactId>palm-core</artifactId>
+	    	<version>${project.version}</version>
+		</dependency>
+		<!-- 
+		<dependency>
+			<groupId>de.rwth.i9.palm</groupId>
+	    	<artifactId>palm-ontology</artifactId>
+	    	<version>${project.version}</version>
+		</dependency>
+		-->
+		<!-- servlet api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<dependency>
+            <groupId>com.github.jsimone</groupId>
+            <artifactId>webapp-runner</artifactId>
+            <version>7.0.22.3</version>
+            <scope>provided</scope>
+        </dependency>
+	</dependencies>
+	
+	
+	
+	<build>
+  
+  	<plugins>
+      
+  		<plugin>            
+		  	<groupId>org.apache.maven.plugins</groupId>
+		  	<artifactId>maven-war-plugin</artifactId>
+		  	<version>${maven.war.plugin.version}</version>
+		  	<configuration>
+		    	<!-- <webXml>src\main\webapp\WEB-INF\web.xml</webXml>-->
+		    	<warSourceDirectory>src/main/webapp</warSourceDirectory>  
+        		<warName>${project.name}</warName>  
+        		<failOnMissingWebXml>false</failOnMissingWebXml>
+		  	</configuration>
+		</plugin>
+		<plugin>
+	       <groupId>org.apache.tomcat.maven</groupId>
+	        <artifactId>tomcat7-maven-plugin</artifactId>
+	        <version>${tomcat7.maven.plugin.version}</version>
+	        <configuration>
+	            <url>http://localhost:8081/${project.name}</url>
+	            <server>localhost</server>
+	            <path>/${project.name}</path>
+	            <port>8081</port>
+	        </configuration>
+	      </plugin>
+	       <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>copy-dependencies</goal></goals>
+                        <configuration>
+                            <includeArtifactIds>webapp-runner</includeArtifactIds>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+	</plugins>
+	
+	<resources>
+	  <resource>
+	    <directory>src/main/resources</directory>
+	    <filtering>true</filtering>
+	    <includes>
+			<include>**/*.xml</include>
+			<include>**/*.json</include>
+			<include>**/*.properties</include>
+		</includes>
+	  </resource>
+	</resources>
+    
+  </build>
+	
+</project>

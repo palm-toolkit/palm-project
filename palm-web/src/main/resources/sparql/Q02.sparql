@@ -1,0 +1,12 @@
+#title:Q02 All the EDM papers of 2012 (and not LAK 2012 papers):
+#tags:
+PREFIX led:<http://data.linkededucation.org/ns/linked-education.rdf#>
+PREFIX swrc:<http://swrc.ontoware.org/ontology#>
+PREFIX swc:<http://data.semanticweb.org/ns/swc/ontology#>
+SELECT ?paper ?fulltext 
+  WHERE { ?conference swc:hasAcronym ?acronym . 
+          ?proceedings  swc:relatedToEvent ?conference . 
+          ?proceedings swc:hasPart ?paper . 
+          ?paper led:body 
+          ?fulltext . FILTER (?acronym = "EDM2012")  
+        }

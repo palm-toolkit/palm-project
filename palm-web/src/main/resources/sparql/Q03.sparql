@@ -1,0 +1,9 @@
+#title:Q03 All papers co-authored by Simon Buckingham Shum and Rebecca Ferguson.
+#tags:
+PREFIX  dc:   <http://purl.org/dc/elements/1.1/>
+
+SELECT ?paper
+WHERE
+  { ?paper dc:creator <http://data.linkededucation.org/resource/lak/person/simon-buckingham-shum> .
+    ?paper dc:creator <http://data.linkededucation.org/resource/lak/person/rebecca-ferguson>
+  }

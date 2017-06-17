@@ -1,0 +1,7 @@
+#title:Q01 full text of all 2011 papers (LAK 2011, EDM conference and journal 2011)
+#tags:
+PREFIX led:<http://data.linkededucation.org/ns/linked-education.rdf#>
+PREFIX swrc:<http://swrc.ontoware.org/ontology#>
+SELECT ?paper ?fulltext 
+  WHERE { ?paper led:body ?fulltext . ?paper swrc:year ?year . 
+           FILTER (?year = "2011") }

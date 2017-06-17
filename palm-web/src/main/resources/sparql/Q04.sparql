@@ -1,0 +1,15 @@
+#title:Q04 All papers published in both EDM and LAK conferences by the authors affiliated to an institution (the “Worcester Polytechnic Institute” in the example)
+#tags:
+
+PREFIX dc:<http://purl.org/dc/elements/1.1/>
+PREFIX swrc:<http://swrc.ontoware.org/ontology#>
+PREFIX swc:<http://data.semanticweb.org/ns/swc/ontology#>
+SELECT  distinct ?title ?year ?acronym 
+     WHERE { ?conference swc:hasAcronym ?acronym . 
+             ?proceedings  swc:relatedToEvent ?conference . 
+             ?proceedings swc:hasPart ?paper . 
+             ?paper dc:creator ?author . ?paper dc:title ?title . 
+             ?paper swrc:year ?year . 
+             ?author swrc:affiliation ?organization . 
+             FILTER (?organization = <http://data.linkededucation.org/resource/lak/organization/worcester-polytechnic-institute> )
+         }
