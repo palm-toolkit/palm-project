@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>de.rwth.i9</groupId>
+    <artifactId>palm-project</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+<!--     <relativePath>../palm-project/pom.xml</relativePath> -->
+  </parent>
+  
+  <groupId>de.rwth.i9.palm</groupId>
+  <artifactId>palm-persistence-relational</artifactId>
+
+  <name>palm-persistence-relational</name>
+  <description>The relational persistence module of PALM project</description>
+  
+  <properties>
+  	<ehcache.core.version>2.6.6</ehcache.core.version>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>de.rwth.i9.palm</groupId>
+  		<artifactId>palm-persistence-api</artifactId>
+  		<version>${project.version}</version>
+  	</dependency>
+  	
+  	<!-- 
+  	<dependency>
+	    <groupId>net.sf.ehcache</groupId>
+	    <artifactId>ehcache-core</artifactId>
+	    <version>${ehcache.core.version}</version>
+	</dependency>
+	-->
+	
+  	<dependency>
+		<groupId>org.javassist</groupId>
+		<artifactId>javassist</artifactId>
+		<version>${javassist.version}</version>
+	</dependency>
+	
+	<!-- Apache Database Connection Pool -->
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-dbcp2</artifactId>
+		<version>${org.apache.commons.dbcp2.version}</version>
+		<exclusions>
+		<exclusion>
+			<artifactId>commons-logging</artifactId>
+			<groupId>commons-logging</groupId>
+		</exclusion>
+	  </exclusions>
+	</dependency>
+	
+	<dependency>
+		<groupId>commons-io</groupId>
+		<artifactId>commons-io</artifactId>
+		<version>${commonsio.version}</version>
+	</dependency>
+	
+	<!-- for integration with spring -->
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-core</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+	<dependency>
+	  <groupId>org.springframework</groupId>
+	  <artifactId>spring-orm</artifactId>
+	  <version>${org.springframework.version}</version>
+	</dependency>
+	
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-test</artifactId>
+  		<version>${org.springframework.version}</version>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.springframework</groupId>
+  		<artifactId>spring-context</artifactId>
+  		<version>${org.springframework.version}</version>
+  		<exclusions>
+		<exclusion>
+			<artifactId>commons-logging</artifactId>
+			<groupId>commons-logging</groupId>
+		</exclusion>
+	  </exclusions>
+  	</dependency>
+  	
+  	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql.connector.java.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>joda-time</groupId>
+		<artifactId>joda-time</artifactId>
+		<version>2.2</version>
+	</dependency>
+  </dependencies>
+  
+</project>
