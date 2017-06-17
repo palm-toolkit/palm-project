@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -jar jars/webapp-runner-7.0.22.3.jar --port $PORT /target/
