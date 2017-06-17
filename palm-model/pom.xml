@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>de.rwth.i9</groupId>
+    <artifactId>palm-project</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+<!--     <relativePath>../palm-project/pom.xml</relativePath> -->
+  </parent>
+  
+  <groupId>de.rwth.i9.palm</groupId>
+  <artifactId>palm-model</artifactId>
+
+  <name>palm-model</name>
+  <description>The model module of PALM project</description>
+  
+  <properties>
+  
+  </properties>
+  
+  <dependencies>
+  	<!-- hibernate -->
+  	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${org.hibernate.core.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>${org.hibernate.entitymanager.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>${org.hibernate.validator.version}</version>
+	</dependency>
+	
+	<!-- hibernate search  -->
+	<dependency>
+	   <groupId>org.hibernate</groupId>
+	   <artifactId>hibernate-search-orm</artifactId>
+	   <version>${hibernate.search.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.lucene</groupId>
+		<artifactId>lucene-analyzers-common</artifactId>
+		<version>${lucene-version}</version>
+	</dependency>
+	
+	<dependency>
+        <artifactId>lucene-queryparser</artifactId>
+        <groupId>org.apache.lucene</groupId>
+        <type>jar</type>
+        <version>${lucene-version}</version>
+     	</dependency>
+  
+  </dependencies>
+</project>
