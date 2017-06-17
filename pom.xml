@@ -80,12 +80,12 @@
   
   <!-- maven modules used in PALM project -->
   <modules>
-  	<module>../palm-model</module>
-  	<module>../palm-persistence-api</module>
-  	<module>../palm-persistence-relational</module>
-  	<module>../palm-analytics</module>
-  	<module>../palm-core</module>
-  	<module>../palm-web</module>
+  	<module>palm-model</module>
+  	<module>palm-persistence-api</module>
+  	<module>palm-persistence-relational</module>
+  	<module>palm-analytics</module>
+  	<module>palm-core</module>
+  	<module>palm-web</module>
   	<!-- <module>../palm-ontology</module> -->
   </modules>
   
